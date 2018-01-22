@@ -138,7 +138,7 @@ to the fitter. One can handle complex flags with a cut string (root cut string):
    
 
 
-*****- Update PU weights - *****
+##  Update PU weights 
 
 1. Pileup files have to be computed with: python etc/scripts/pureweight.py
 
