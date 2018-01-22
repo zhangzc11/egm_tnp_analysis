@@ -21,19 +21,15 @@ import etc.inputs.tnpSampleDef as tnpSamples
 tnpTreeDir = 'tnpPhoIDs'
 
 samplesDef = {
-    'data'   : tnpSamples.Moriond18_94X['data_Run2017Bv1'].clone(),
+    'data'   : tnpSamples.Moriond18_94X['data_Run2017B'].clone(),
     'mcNom'  : tnpSamples.Moriond18_94X['DY_madgraph_Moriond18'].clone(),
     'mcAlt'  : tnpSamples.Moriond18_94X['DY_madgraph_Moriond18'].clone(),
     'tagSel' : tnpSamples.Moriond18_94X['DY_madgraph_Moriond18'].clone(),
 }
 ## can add data sample easily
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017Bv1'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017Bv2'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017Cv1'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017Cv2'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017Cv3'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017Dv1'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017Ev1'] )
+#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017D'] )
+#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017E'] )
+#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017F'] )
 
 ## some sample-based cuts... general cuts defined here after
 ## require mcTruth on MC DY samples and additional cuts
@@ -58,14 +54,16 @@ if not samplesDef['tagSel'] is None:
 #if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 #if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
 
-## set MC weight, can use several pileup rw for different data taking periods
-weightName = 'weights_2016_runGH.totWeight'
+## set MC weight, can use several pileup rw for different data taking 
+
+weightName = 'weights_2017_runB.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_madgraph_Winter17_pho.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_amcatnlo_Winter17_pho.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/tnp/80X/pu/Winter17/DY_madgraph_Winter17_pho.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2/DY_madgraph_pho.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2/DY_amcatnlo_Moriond18_pho.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2/DY_madgraph_pho.pu.puTree.root')
+
 
 
 #############################################################
