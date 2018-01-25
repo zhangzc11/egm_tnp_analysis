@@ -35,6 +35,7 @@ samplesDef = {
 }
 
 ## can add data sample easily
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017C'] )
 samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017D'] )
 samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017E'] )
 samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017F'] )
@@ -67,9 +68,9 @@ weightName = 'weights_2017_runBDEF.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2/DY_madgraph_ele.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2/DY_amcatnlo_Moriond18_ele.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2/DY_madgraph_ele.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2-wRUNC/DY_madgraph_ele.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2-wRUNC/DY_amcatnlo_Moriond18_ele.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/PU/mc-V2-wRUNC/DY_madgraph_ele.pu.puTree.root')
 
 
 #############################################################
