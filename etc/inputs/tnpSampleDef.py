@@ -5,7 +5,7 @@ from libPython.tnpClassUtils import tnpSample
 #eosDir2 = 'eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/v2/'
 #eosDirREC = 'eos/cms/store/group/phys_egamma/tnp/80X/RecoSF/RECOSFs_2016/'
 #eosWinter17 = 'eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/Moriond17_v1/'
-eosMoriond18 = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/Moriond18_V1/'
+eosMoriond18 = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/'
 
 Moriond18_94X = {
     ### MiniAOD TnP for IDs scale factors
@@ -16,7 +16,7 @@ Moriond18_94X = {
                                        eosMoriond18 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_all.root',
                                        isMC = True, nEvts = -1 ),
     'DY_amcatnlo_Moriond18' : tnpSample('DY_amcatnlo_Moriond18', 
-                                       eosMoriond18 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_all.root',
+                                       eosMoriond18 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8_all.root',
                                        isMC = True, nEvts = -1 ),
 
     'data_Run2017B' : tnpSample('data_Run2017B' , eosMoriond18 + 'data/TnPTree_17Nov2017_RunB.root' , lumi = 4.891 ),
