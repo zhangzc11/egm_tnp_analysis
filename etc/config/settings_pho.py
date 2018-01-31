@@ -22,9 +22,9 @@ tnpTreeDir = 'tnpPhoIDs'
 
 samplesDef = {
     'data'   : tnpSamples.Moriond18_94X['data_Run2017B'].clone(),
-    'mcNom'  : tnpSamples.Moriond18_94X['DY_madgraph_Moriond18'].clone(),
-    'mcAlt'  : tnpSamples.Moriond18_94X['DY_madgraph_Moriond18'].clone(),
-    'tagSel' : tnpSamples.Moriond18_94X['DY_madgraph_Moriond18'].clone(),
+    'mcNom'  : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
+    'mcAlt'  : tnpSamples.Moriond18_94X['DY_amcatnlo_Moriond18'].clone(),
+    'tagSel' : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
 }
 ## can add data sample easily
 #samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017C'] )
