@@ -292,7 +292,7 @@ def reweight( sample, puType = 0,useCustomW=False  ):
                 if evt['truePU']> 0 and evt['truePU']<99: 
                     pud = puDataArray[pu][evt['truePU']] 
                     pum = pumc[evt['truePU']]
-            puw = 1
+            puw = 0
             if pum > 0: 
                 puw  = pud/pum
 #                if use customized weights
