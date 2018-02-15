@@ -7,15 +7,17 @@
 
 > cd egm_tnp_analysis
 
-no compilation is required (this will auto compile the C++ code automatically) but you need ROOT and RooFit installed.
+First you need to setup the environment, especially on lxplus (do not use cmsenv from cmssw)
+
+> source etc/scritps/setup.sh
+
+You need ROOT (>= 6.10) and RooFit installed. Compile with:
+
+> make
 
 This can be run on a laptop, does not require cmssw environment (still requires the setup to be run)
 
 ## Quick description
-
-First you need to setup the environment, especially on lxplus (do not use cmsenv from cmssw)
-
-> source etc/scritps/setup.sh
 
 Package to handle analysis of tnp trees. The main tool is the python fitter
 
