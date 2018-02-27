@@ -90,7 +90,7 @@ for s in tnpConf.samplesDef.keys():
 
 if args.createHists:
 
-    import libPython.histUtils as tnpRoot
+    import libPython.histUtils as tnpHist
 
     for sampleType in tnpConf.samplesDef.keys():
         sample =  tnpConf.samplesDef[sampleType]
