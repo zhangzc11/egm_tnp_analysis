@@ -3,7 +3,9 @@
 
 ## Install stable branch
 
-> git clone -b egm_tnp_Moriond17_v2.0 git@github.com:fcouderc/egm_tnp_analysis.git 
+>git clone -b egm_tnp_Moriond18_v2.0 git@github.com:lsoffi/egm_tnp_analysis.git
+
+
 
 > cd egm_tnp_analysis
 
@@ -134,6 +136,29 @@ to the fitter. One can handle complex flags with a cut string (root cut string):
 
 ====================
    
+
+
+##  Update PU weights 
+
+1. Pileup files have to be computed with: python etc/scripts/pureweight.py
+
+Here one has to update the name of the directory whre the files will be located and the corresponding names.
+
+
+2.This pyhton uses the following: libPython/puReweighter.py.
+
+Here one nees to add the PU MC mix numbers that are available here: http://cmslxr.fnal.gov/source/SimGeneral/MixingModule/python/?v=CMSSW_9_4_0
+
+
+3.The data PU distrubtions can be computed using the following instructions (similar to what is done in step1):
+
+pileupCalc.py -i /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/PromptReco/Cert_294927-306462_13TeV_PromptReco_Collisions17_JSON.txt --inputLumiJSON /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/PileUp/pileup_latest.txt --calcMode true --minBiasXsec 69200 --maxPileupBin 100 --numPileupBins 100 pileup_2017_41fb.root
+
+
+The nvtx and rho histos are not needed because we will use the pu method (type = 0) for the reweight.
+
+NB: Before using these py in order to load the needed libraires one has to run: 
+export  PYTHONPATH=$PYTHONPATH:/afs/cern.ch/user/s/soffi/scratch0/TEST/CMSSW-10-0-0-pre3/src/egm_tnp_analysis 
 
 
 #### adding remote (Fabrice version)
