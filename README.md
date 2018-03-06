@@ -1,7 +1,20 @@
 # egm_tnp_analysis
 
+## General note on installation
+
+This code can in principle run on your laptop but you need root 6.10 or higher and RooFit installed to use some advanced features when creating histograms.
+The easiest thing to do is to set the environement in a 9_4_X release:
+
+>cmsrel CMSSW_9_4_0
+>cd CMSSW_9_4_0/src
+>cmsenv
+
 
 ## Install stable branch
+
+>git clone -b egm_tnp_Moriond18_v3.0 git@github.com:lsoffi/egm_tnp_analysis.git
+
+if you  want to run the old tnp code which runs also with root < 6.10 you can get this branch: 
 
 >git clone -b egm_tnp_Moriond18_v2.0 git@github.com:lsoffi/egm_tnp_analysis.git
 
@@ -9,13 +22,14 @@
 
 > cd egm_tnp_analysis
 
-no compilation is required (this will auto compile the C++ code automatically) but you need ROOT and RooFit installed.
-
-This can be run on a laptop, does not require cmssw environment (still requires the setup to be run)
 
 ## Quick description
 
-First you need to setup the environment, especially on lxplus (do not use cmsenv from cmssw)
+First you need to setup the environment, especially on lxplus: 
+
+> source etc/scritps/setup94.sh
+
+if you  want to run the old tnp code which runs also with root < 6.10 you can get this branch: 
 
 > source etc/scritps/setup.sh
 
@@ -23,7 +37,11 @@ Package to handle analysis of tnp trees. The main tool is the python fitter
 
    ===> tnpEGM_fitter.py
 
-The interface between the user and the fitter is solely done via the settings file
+The interface between the user and the fitter is solely done via the settings file.
+
+**IMPORTANT**
+In the following we refer to this file as "settings.py",
+anyway that is just a template file. you should run "settings_ele.py", or "settings_pho.py", or edit them according to your needs.
 
    ===> etc/config/settings.py
    	- set the flags (i.e. Working points) that can be tested
