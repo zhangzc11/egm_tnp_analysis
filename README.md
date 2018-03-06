@@ -14,7 +14,7 @@ The easiest thing to do is to set the environement in a 9_4_X release:
 
 ## Install stable branch
 
->git clone -b egm_tnp_Moriond18_v3.0 git@github.com:lsoffi/egm_tnp_analysis.git
+>git clone -b egm_tnp_Moriond18_v3.0 git@github.com:michelif/egm_tnp_analysis.git
 
 if you  want to run the old tnp code which runs also with ROOT < 6.10 you can get this branch: 
 
