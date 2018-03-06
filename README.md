@@ -23,11 +23,11 @@ if you  want to run the old tnp code which runs also with ROOT < 6.10 you can ge
 On lxplus you need to setup the environment: 
 > cd egm_tnp_analysis
 
-> source etc/scritps/setup94.sh
+> source etc/scripts/setup94.sh
 
 or if you got the branch for ROOT < 6.10:
 
-> source etc/scritps/setup.sh
+> source etc/scripts/setup.sh
 
 Compile with:
 
