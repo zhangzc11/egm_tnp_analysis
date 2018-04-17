@@ -42,13 +42,14 @@ puMC = {
 
 ### MC pu scenario to be used
 #puMCscenario = 'Spring2016MC_PUscenarioV1'
-puMCscenario = 'Spring2016MC_PUscenarioV1'
-customWeightsName= 'weights'
+#puMCscenario = 'Spring2016MC_PUscenarioV1'
+puMCscenario = 'Moriond17MC_mix_2016'
+
 
 
 #### Compute weights for all data epoch specified below
 
-puDirEOS2016 = '/eos/cms//store/group/phys_egamma/tnp/80X/pu/'
+puDirEOS2016 = '/eos/cms/store/group/phys_egamma/tnp/80X/pu/'
 puDataEpoch = {
     '2016_runBCD' : puDirEOS2016 + 'pu_dist_runBCD_692.root',
     '2016_runEF'  : puDirEOS2016 + 'pu_dist_runEF_692.root' ,
@@ -71,7 +72,7 @@ rhoDataEpoch = {
 
 
 
-def reweight( sample, puType = 0,useCustomW=False  ):
+def reweight( sample, puType = 0  ):
     if sample.path is None:
         print '[puReweighter]: Need to know the MC tree (option --mcTree or sample.path)'
         sys.exit(1)
@@ -150,9 +151,7 @@ def reweight( sample, puType = 0,useCustomW=False  ):
         evt = mcEvts[ievt]
         for pu in epochKeys:
 #            print pu
-            customWeights=customWeights_17Nov2017MCv2[pu]
-#            print customWeights_17Nov2017MCv2[pu]
-#            print "--------------------------"
+
             pum = -1
             pud = -1
             if puType == 1 and evt['event_nPV'] < puMax:
@@ -169,13 +168,7 @@ def reweight( sample, puType = 0,useCustomW=False  ):
             puw = 0
             if pum > 0: 
                 puw  = pud/pum
-#                if use customized weights
-            if useCustomW:
-                puw=0
-                if  evt['truePU']> 0 and evt['truePU']<97:
-                    puw = customWeights[evt['truePU']]
-                
-#                    print evt['truePU'],puw
+
 
             if evt['weight'] > 0 : totw = +puw
             else                 : totw = -puw

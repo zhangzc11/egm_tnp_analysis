@@ -3,6 +3,13 @@
 #############################################################
 # flag to be Tested
 flags = {
+    'passingVeto80X'    : '(passingVeto80X   == 1)',
+    'passingLoose80X'   : '(passingLoose80X  == 1)',
+    'passingMedium80X'  : '(passingMedium80X == 1)',
+    'passingTight80X'   : '(passingTight80X  == 1)',
+    'passingMVA80Xwp80' : '(passingMVA80Xwp80 == 1)',
+    'passingMVA80Xwp90' : '(passingMVA80Xwp90 == 1)',
+
     'passingLoose94X'   : '(passingLoose94X  == 1)',
     'passingMedium94X'  : '(passingMedium94X == 1)',
     'passingTight94X'   : '(passingTight94X  == 1)',
@@ -10,7 +17,7 @@ flags = {
     'passingMVA94Xwp90' : '(passingMVA94Xwp90 == 1)',
     }
 
-baseOutDir = 'results/Moriond18/tnpPhoID/runBE/'
+baseOutDir = 'results/Moriond18/tnpPhoID/runAll/'
 
 #############################################################
 ########## samples definition  - preparing the samples
@@ -19,18 +26,21 @@ baseOutDir = 'results/Moriond18/tnpPhoID/runBE/'
 ### not: you can setup another sampleDef File in inputs
 import etc.inputs.tnpSampleDef as tnpSamples
 tnpTreeDir = 'tnpPhoIDs'
-
 samplesDef = {
-    'data'   : tnpSamples.Moriond18_94X['data_Run2017B'].clone(),
-    'mcNom'  : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
-    'mcAlt'  : tnpSamples.Moriond18_94X['DY_amcatnlo_Moriond18'].clone(),
-    'tagSel' : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
+    'data'   : tnpSamples.Legacy2016_94X['data_Run2016Bv2'].clone(),
+    'mcNom'  : tnpSamples.Legacy2016_94X['DY_madgraph_Moriond17'].clone(),
+    'mcAlt'  : tnpSamples.Legacy2016_94X['DY_madgraph_Moriond17'].clone(),
+    'tagSel' : tnpSamples.Legacy2016_94X['DY_madgraph_Moriond17'].clone(),
 }
-## can add data sample easily
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017C'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017D'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017E'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017F'] )
+
+## can add data sample easily                                                                                                                                                      
+samplesDef['data'].add_sample( tnpSamples.Legacy2016_94X['data_Run2016C'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy2016_94X['data_Run2016D'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy2016_94X['data_Run2016E'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy2016_94X['data_Run2016F'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy2016_94X['data_Run2016G'] )
+samplesDef['data'].add_sample( tnpSamples.Legacy2016_94X['data_Run2016H'] )
+
 
 ## some sample-based cuts... general cuts defined here after
 ## require mcTruth on MC DY samples and additional cuts
@@ -47,23 +57,18 @@ if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_mcTruth()
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_mcTruth()
 if not samplesDef['tagSel'] is None:
     samplesDef['tagSel'].rename('mcAltSel_DY_madgraph')
-    samplesDef['tagSel'].set_cut('tag_Ele_pt > 35')
+    samplesDef['tagSel'].set_cut('tag_Ele_pt > 35 && tag_Ele_nonTrigMVA80X > 0.95')
 
-## set MC weight, simple way (use tree weight) 
-#weightName = 'totWeight'
-#if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
-#if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
-#if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
 
 ## set MC weight, can use several pileup rw for different data taking 
 
-weightName = 'weights_2017_runB.totWeight'
+weightName = 'weights_2016_runAll.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2/DY_madgraph_pho.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2/DY_amcatnlo_Moriond18_pho.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2/DY_madgraph_pho.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_04162018-Legacy2016/Legacy16_V1/PU/mc/DY_madgraph_Moriond17_ele.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_04162018-Legacy2016/Legacy16_V1/PU/mc/DY_madgraph_Moriond17_ele.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_04162018-Legacy2016/Legacy16_V1/PU/mc/DY_madgraph_Moriond17_ele.pu.puTree.root')
 
 
 
@@ -72,7 +77,7 @@ if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/s
 #############################################################
 biningDef = [
    { 'var' : 'ph_sc_eta' , 'type': 'float', 'bins': [-2.5,-2.0,-1.566,-1.4442, -0.8, 0.0, 0.8, 1.4442, 1.566, 2.0, 2.5] },
-   { 'var' : 'ph_et' , 'type': 'float', 'bins': [20,35,50,100,200,500] },
+   { 'var' : 'ph_et' , 'type': 'float', 'bins': [20,35,50,90,150] },
 ]
 
 #############################################################
