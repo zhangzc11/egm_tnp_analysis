@@ -37,7 +37,7 @@ tnpTreeDir = 'tnpEleIDs'
 samplesDef = {
     'data'   : tnpSamples.Legacy2016_94X['data_Run2016Bv2'].clone(),
     'mcNom'  : tnpSamples.Legacy2016_94X['DY_madgraph_Moriond17'].clone(),
-    'mcAlt'  : tnpSamples.Legacy2016_94X['DY_madgraph_Moriond17'].clone(),
+    'mcAlt'  : tnpSamples.Legacy2016_94X['DY_amcatnlo_Moriond17'].clone(),
     'tagSel' : tnpSamples.Legacy2016_94X['DY_madgraph_Moriond17'].clone(),
 }
 
@@ -78,7 +78,7 @@ if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_04162018-Legacy2016/Legacy16_V1/PU/mc/DY_madgraph_Moriond17_ele.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_04162018-Legacy2016/Legacy16_V1/PU/mc/DY_madgraph_Moriond17_ele.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_04162018-Legacy2016/Legacy16_V1/PU/mc/DY_amcatnlo_Moriond17_ele.pu.puTree.root')
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_04162018-Legacy2016/Legacy16_V1/PU/mc/DY_madgraph_Moriond17_ele.pu.puTree.root')
 
 

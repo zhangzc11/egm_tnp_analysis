@@ -10,15 +10,12 @@ eosLegacy2016 = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_04162018-Leg
 
 Legacy2016_94X = {
     ### MiniAOD TnP for IDs scale factors
-#    'DY_madgraph'          : tnpSample('DY_madgraph',
-#                                       eosLegacy2016 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_all.root',
-#                                       isMC = True, nEvts =  -1 ),
-    'DY_madgraph_Moriond17' : tnpSample('DY_madgraph_Moriond17', 
-                                        eosLegacy2016 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_all.root',
+#    'DY_madgraph_Moriond17' : tnpSample('DY_madgraph_Moriond17', 
+#                                        eosLegacy2016 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8_all.root',
+#                                        isMC = True, nEvts =  -1 ),
+    'DY_amcatnlo_Moriond17' : tnpSample('DY_amcatnlo_Moriond17', 
+                                        eosLegacy2016 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia_all.root',
                                         isMC = True, nEvts =  -1 ),
-    #    'DY_amcatnlo_Moriond18' : tnpSample('DY_amcatnlo_Moriond18', 
-#                                       eosLegacy2016 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8_all.root',
-#                                       isMC = True, nEvts =  -1 ),
 
     'data_Run2016Bv2' : tnpSample('data_Run2017Bv2' , eosLegacy2016 + 'data/TnPTree_07Aug17_Run2016Bv2.root' , lumi = 5.89 ),
     'data_Run2016C' : tnpSample('data_Run2017C' , eosLegacy2016 + 'data/TnPTree_07Aug17_Run2016C.root' , lumi = 2.646 ),
