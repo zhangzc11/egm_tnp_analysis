@@ -28,10 +28,10 @@ import etc.inputs.tnpSampleDef as tnpSamples
 tnpTreeDir = 'tnpEleIDs'
 
 samplesDef = {
-    'data'   : tnpSamples.Data2018_10_1_X['data_2018_RunA'].clone(),
-    'mcNom'  : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_15p'].clone(),
-    'mcAlt'  : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_15p'].clone(),
-    'tagSel' : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_15p'].clone(),
+    'data'   : tnpSamples.Data2018_10_1_X['data_2018_RunA_v1'].clone(),
+    'mcNom'  : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_30p'].clone(),
+    'mcAlt'  : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_30p'].clone(),
+    'tagSel' : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_30p'].clone(),
 }
 
 ## can add data sample easily
@@ -68,9 +68,9 @@ weightName = 'weights_2018_runA.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_05122018/2018Data_V1/PU/mc/DY_madgraph_2018_15p_ele.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_05122018/2018Data_V1/PU/mc/DY_madgraph_2018_15p_ele.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_05122018/2018Data_V1/PU/mc/DY_madgraph_2018_15p_ele.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_06152018/2018Data_1/PU/DY_madgraph_2018_30p_ele.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_06152018/2018Data_1/PU/DY_madgraph_2018_30p_ele.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_06152018/2018Data_1/PU/DY_madgraph_2018_30p_ele.pu.puTree.root')
 
 
 #############################################################
