@@ -162,9 +162,10 @@ to the fitter. One can handle complex flags with a cut string (root cut string):
 
 ##  Update PU weights 
 
-1. Pileup files have to be computed with: python etc/scripts/pureweight.py
+1.Pileup files have to be computed with: python etc/scripts/pureweight.py
 
-Here one has to update the name of the directory whre the files will be located and the corresponding names.
+Here one has to update the name of the directory whre the files will be located and the corresponding names. If needed you have to recompute the data PU distributions
+and copying them to eos before doing this step, see point 3.
 
 
 2.This pyhton uses the following: libPython/puReweighter.py.
