@@ -28,7 +28,7 @@ import etc.inputs.tnpSampleDef as tnpSamples
 tnpTreeDir = 'tnpEleIDs'
 
 samplesDef = {
-    'data'   : tnpSamples.Data2018_10_1_X['data_2018_RunA_v1'].clone(),
+    'data'   : tnpSamples.Data2018_10_1_X['data_2018_RunA_v123'].clone(),
     'mcNom'  : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_30p'].clone(),
     'mcAlt'  : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_30p'].clone(),
     'tagSel' : tnpSamples.Data2018_10_1_X['DY_madgraph_2018_30p'].clone(),
@@ -64,7 +64,7 @@ if not samplesDef['tagSel'] is None:
 #if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
 
 ## set MC weight, can use several pileup rw for different data taking periods
-weightName = 'weights_2018_runA.totWeight'
+weightName = 'weights_2018_runAB.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)

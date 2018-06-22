@@ -40,10 +40,8 @@ Data2018_10_1_X = {
 #                                       eosMoriond18 + 'mc/TnPTree_DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8_all.root',
 #                                       isMC = True, nEvts =  -1 ),
 
-    'data_2018_RunA_v1' : tnpSample('data_2018_RunA' , eos2018Data_V3 + 'data/TnP_Prompt2018_RunA_v1_all.root' , lumi = 14.38 ),#FIXME this lumi has to be updated to have the correct lumi on plots
-    'data_2018_RunA_v2' : tnpSample('data_2018_RunA' , eos2018Data_V3 + 'data/TnP_Prompt2018_RunA_v2_all.root' , lumi = 14.38 ),
-    'data_2018_RunA_v3' : tnpSample('data_2018_RunA' , eos2018Data_V3 + 'data/TnP_Prompt2018_RunA_v3_all.root' , lumi = 14.38 ),
-    'data_2018_RunB_v1' : tnpSample('data_2018_RunB' , eos2018Data_V3 + 'data/TnP_Prompt2018_RunB_v1_all.root' , lumi = 14.38 ),
+    'data_2018_RunA_v123' : tnpSample('data_2018_RunA_v123' , eos2018Data_V3 + 'data/TnP_Prompt2018_RunA_v123_selectedRuns.root' , lumi = 0 ),#FIXME so far all the integrated value of the lumi is assigned to runb, still need to compute individual run lumi
+    'data_2018_RunB_v1' : tnpSample('data_2018_RunB' , eos2018Data_V3 + 'data/TnP_Prompt2018_RunB_v1_all.root' , lumi = 16.59 ),
 
 
 
