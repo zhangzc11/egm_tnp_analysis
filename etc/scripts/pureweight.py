@@ -5,8 +5,8 @@ import libPython.puReweighter as pu
 
 puType = 0
 
-for sName in tnpSamples.Moriond18_94X.keys():    
-    sample = tnpSamples.Moriond18_94X[sName]
+for sName in tnpSamples.Moriond18_94X_OOTid.keys():    
+    sample = tnpSamples.Moriond18_94X_OOTid[sName]
     if sample is None : continue
 #    if not 'rec' in sName : continue
 #    if not 'Winter17' in sName : continue
@@ -14,11 +14,11 @@ for sName in tnpSamples.Moriond18_94X.keys():
     if not sample.isMC: continue
     
     trees = {}
-    trees['ele'] = 'tnpEleIDs'
+#    trees['ele'] = 'tnpEleIDs'
     trees['pho'] = 'tnpPhoIDs'
 #    trees['rec'] = 'GsfElectronToSC'
     for tree in trees:
-        dirout =  '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2-customW/'
+        dirout =  '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_07042018_wOOTid/2017Data_FullJson/PU/'
         mkdir(dirout)
         
         if   puType == 0 : sample.set_puTree( dirout + '%s_%s.pu.puTree.root'   % (sample.name,tree) )

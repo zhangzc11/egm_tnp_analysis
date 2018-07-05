@@ -4,13 +4,13 @@
 # flag to be Tested
 flags = {
     'passingLoose94X'   : '(passingLoose94X  == 1)',
+    'passingOOTLoose94X'   : '(passingOOTLoose94X  == 1)',
     'passingMedium94X'  : '(passingMedium94X == 1)',
     'passingTight94X'   : '(passingTight94X  == 1)',
-    'passingMVA94Xwp80' : '(passingMVA94Xwp80 == 1)',
-    'passingMVA94Xwp90' : '(passingMVA94Xwp90 == 1)',
+    'passingOOTTight94X'   : '(passingOOTTight94X  == 1)',
     }
 
-baseOutDir = 'results/Moriond18/tnpPhoID/runBE/'
+baseOutDir = 'results/Moriond18_OOTid/tnpPhoID/runBCDEF/'
 
 #############################################################
 ########## samples definition  - preparing the samples
@@ -21,16 +21,16 @@ import etc.inputs.tnpSampleDef as tnpSamples
 tnpTreeDir = 'tnpPhoIDs'
 
 samplesDef = {
-    'data'   : tnpSamples.Moriond18_94X['data_Run2017B'].clone(),
-    'mcNom'  : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
-    'mcAlt'  : tnpSamples.Moriond18_94X['DY_amcatnlo_Moriond18'].clone(),
-    'tagSel' : tnpSamples.Moriond18_94X['DY_madgraph'].clone(),
+    'data'   : tnpSamples.Moriond18_94X_OOTid['data_Run2017B'].clone(),
+    'mcNom'  : tnpSamples.Moriond18_94X_OOTid['DY_madgraph_Moriond18'].clone(),
+    'mcAlt'  : tnpSamples.Moriond18_94X_OOTid['DY_madgraph_Moriond18'].clone(),
+    'tagSel' : tnpSamples.Moriond18_94X_OOTid['DY_madgraph_Moriond18'].clone(),
 }
 ## can add data sample easily
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017C'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017D'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017E'] )
-#samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017F'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017C'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017D'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017E'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017F'] )
 
 ## some sample-based cuts... general cuts defined here after
 ## require mcTruth on MC DY samples and additional cuts
@@ -45,7 +45,7 @@ if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_tnpTree(tnpTreeDir
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_mcTruth()
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_mcTruth()
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_mcTruth()
-if not samplesDef['tagSel'] is None:
+if not samplesDef['tagSel'] is None:s
     samplesDef['tagSel'].rename('mcAltSel_DY_madgraph')
     samplesDef['tagSel'].set_cut('tag_Ele_pt > 35')
 
@@ -57,13 +57,13 @@ if not samplesDef['tagSel'] is None:
 
 ## set MC weight, can use several pileup rw for different data taking 
 
-weightName = 'weights_2017_runB.totWeight'
+weightName = 'weights_2017_runBCDEF.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2/DY_madgraph_pho.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2/DY_amcatnlo_Moriond18_pho.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/PU/mc-V2/DY_madgraph_pho.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_07042018_wOOTid/2017Data_FullJson/PU/DY_madgraph_Moriond18_pho.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_07042018_wOOTid/2017Data_FullJson/PU/DY_madgraph_Moriond18_pho.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_07042018_wOOTid/2017Data_FullJson/PU/DY_madgraph_Moriond18_pho.pu.puTree.root')
 
 
 
