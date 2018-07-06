@@ -27,10 +27,10 @@ samplesDef = {
     'tagSel' : tnpSamples.Moriond18_94X_OOTid['DY_madgraph_Moriond18'].clone(),
 }
 ## can add data sample easily
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017C'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017D'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017E'] )
-samplesDef['data'].add_sample( tnpSamples.Moriond18_94X['data_Run2017F'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X_OOTid['data_Run2017C'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X_OOTid['data_Run2017D'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X_OOTid['data_Run2017E'] )
+samplesDef['data'].add_sample( tnpSamples.Moriond18_94X_OOTid['data_Run2017F'] )
 
 ## some sample-based cuts... general cuts defined here after
 ## require mcTruth on MC DY samples and additional cuts
@@ -45,9 +45,8 @@ if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_tnpTree(tnpTreeDir
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_mcTruth()
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_mcTruth()
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_mcTruth()
-if not samplesDef['tagSel'] is None:s
-    samplesDef['tagSel'].rename('mcAltSel_DY_madgraph')
-    samplesDef['tagSel'].set_cut('tag_Ele_pt > 35')
+samplesDef['tagSel'].rename('mcAltSel_DY_madgraph')
+samplesDef['tagSel'].set_cut('tag_Ele_pt > 35')
 
 ## set MC weight, simple way (use tree weight) 
 #weightName = 'totWeight'
@@ -71,7 +70,7 @@ if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/s
 ########## bining definition  [can be nD bining]
 #############################################################
 biningDef = [
-   { 'var' : 'ph_sc_eta' , 'type': 'float', 'bins': [-2.5,-2.0,-1.566,-1.4442, -0.8, 0.0, 0.8, 1.4442, 1.566, 2.0, 2.5] },
+   { 'var' : 'ph_sc_eta' , 'type': 'float', 'bins': [-1.4442, -0.8, 0.0, 0.8, 1.4442] },
    { 'var' : 'ph_et' , 'type': 'float', 'bins': [20,35,50,100,200,500] },
 ]
 
