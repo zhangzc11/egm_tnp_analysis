@@ -180,7 +180,8 @@ pileupCalc.py -i /afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions1
 The nvtx and rho histos are not needed because we will use the pu method (type = 0) for the reweight.
 
 NB: Before using these py in order to load the needed libraires one has to run: 
-export  PYTHONPATH=$PYTHONPATH:/afs/cern.ch/user/s/soffi/scratch0/TEST/CMSSW-10-0-0-pre3/src/egm_tnp_analysis 
+pwd -> gives you the full release path <FULL_NAME>
+export  PYTHONPATH=$PYTHONPATH:<FULL_NAME> 
 
 
 #### adding remote (Fabrice version)
