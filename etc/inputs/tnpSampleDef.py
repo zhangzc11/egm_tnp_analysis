@@ -23,17 +23,13 @@ Data2018_102X = {
 #    'DY_madgraph_part2' : tnpSample('DY_madgraph_part2', 
 #                                       eos2018Data_102X + 'mc/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_part2.root',
 #                                       isMC = True, nEvts =  -1 ),
-    'data_Run2018Av1' : tnpSample('data_Run2018Av1' , eos2018Data_102X + 'data/Prompt2018_RunA_v1.root' , lumi = 20),  
-    'data_Run2018Av2' : tnpSample('data_Run2018Av2' , eos2018Data_102X + 'data/Prompt2018_RunA_v2.root' , lumi = 0),
-    'data_Run2018Av3' : tnpSample('data_Run2018Av3' , eos2018Data_102X + 'data/Prompt2018_RunA_v3.root' , lumi = 0),
+    'data_Run2018Av123' : tnpSample('data_Run2018Av123' , eos2018Data_102X + 'data/Prompt2018_RunA_v123.root' , lumi = 13.53),  
 
-    'data_Run2018Bv1' : tnpSample('data_Run2018Bv1' , eos2018Data_102X + 'data/Prompt2018_RunB_v1.root' , lumi = 0),
-    'data_Run2018Bv2' : tnpSample('data_Run2018Bv2' , eos2018Data_102X + 'data/Prompt2018_RunB_v2.root' , lumi = 0),
+    'data_Run2018Bv12' : tnpSample('data_Run2018Bv12' , eos2018Data_102X + 'data/Prompt2018_RunB_v12.root' , lumi = 6.78),
 
-    'data_Run2018Cv1' : tnpSample('data_Run2018Cv1' , eos2018Data_102X + 'data/Prompt2018_RunC_v1.root' , lumi = 0),
-    'data_Run2018Cv2' : tnpSample('data_Run2018Cv2' , eos2018Data_102X + 'data/Prompt2018_RunC_v2.root' , lumi = 0),
+    'data_Run2018Cv12' : tnpSample('data_Run2018Cv12' , eos2018Data_102X + 'data/Prompt2018_RunC_v12.root' , lumi = 6.61),
 
-    'data_Run2018Dv2' : tnpSample('data_Run2018Dv2' , eos2018Data_102X + 'data/Prompt2018_RunD_v2.root' , lumi = 0),
+    'data_Run2018Dv2' : tnpSample('data_Run2018Dv2' , eos2018Data_102X + 'data/Prompt2018_RunD_v2.root' , lumi = 4.78),
 
 
     }
