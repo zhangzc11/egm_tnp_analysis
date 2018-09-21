@@ -6,23 +6,19 @@ from libPython.tnpClassUtils import tnpSample
 #eosDirREC = 'eos/cms/store/group/phys_egamma/tnp/80X/RecoSF/RECOSFs_2016/'
 #eosWinter17 = 'eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/Moriond17_v1/'
 eosMoriond18 = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/'
-eos2018Data_102X = '/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/'
+eos2018Data_102X = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/'
 
 Data2018_102X = {
     ### MiniAOD TnP for IDs scale 
-    'DY_madgraph_part012' : tnpSample('DY_madgraph_part012', 
-                                       eos2018Data_102X + 'mc/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_part012.root',
+    'DY_madgraph_100X_part012' : tnpSample('DY_madgraph_100X_part012', 
+                                       eos2018Data_102X + 'mc/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8-AOD-100X_part012.root',
                                        isMC = True, nEvts =  -1 ),
 
-#    'DY_madgraph_part0' : tnpSample('DY_madgraph_part0', 
-#                                       eos2018Data_102X + 'mc/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_part0.root',
-#                                       isMC = True, nEvts =  -1 ),
-#    'DY_madgraph_part1' : tnpSample('DY_madgraph_part1', 
-#                                       eos2018Data_102X + 'mc/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_part1.root',
-#                                       isMC = True, nEvts =  -1 ),
-#    'DY_madgraph_part2' : tnpSample('DY_madgraph_part2', 
-#                                       eos2018Data_102X + 'mc/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8_part2.root',
-#                                       isMC = True, nEvts =  -1 ),
+    'DY_powheg_102X_part01' : tnpSample('DY_madgraph_102X_part01', 
+                                       eos2018Data_102X + 'mc/DYToEE_M-50_NNPDF31_TuneCP5_13TeV-powheg-pythia8-AOD-102X_part01.root',
+                                       isMC = True, nEvts =  -1 ),
+
+
     'data_Run2018Av123' : tnpSample('data_Run2018Av123' , eos2018Data_102X + 'data/Prompt2018_RunA_v123.root' , lumi = 13.53),  
 
     'data_Run2018Bv12' : tnpSample('data_Run2018Bv12' , eos2018Data_102X + 'data/Prompt2018_RunB_v12.root' , lumi = 6.78),
