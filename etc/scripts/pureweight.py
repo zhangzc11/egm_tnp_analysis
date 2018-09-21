@@ -18,7 +18,7 @@ for sName in tnpSamples.Data2018_102X.keys():
     trees['pho'] = 'tnpPhoIDs'
 #    trees['rec'] = 'GsfElectronToSC'
     for tree in trees:
-        dirout =  '/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/mc/PU/'
+        dirout =  '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/'
         mkdir(dirout)
         
         if   puType == 0 : sample.set_puTree( dirout + '%s_%s.pu.puTree.root'   % (sample.name,tree) )

@@ -14,7 +14,7 @@ Data2018_102X = {
                                        eos2018Data_102X + 'mc/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8-AOD-100X_part012.root',
                                        isMC = True, nEvts =  -1 ),
 
-    'DY_powheg_102X_part01' : tnpSample('DY_madgraph_102X_part01', 
+    'DY_powheg_102X_part01' : tnpSample('DY_powheg_102X_part01', 
                                        eos2018Data_102X + 'mc/DYToEE_M-50_NNPDF31_TuneCP5_13TeV-powheg-pythia8-AOD-102X_part01.root',
                                        isMC = True, nEvts =  -1 ),
 

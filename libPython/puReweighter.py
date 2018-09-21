@@ -104,7 +104,7 @@ puMC = {
 
 puMCscenario = 'MC2018_JuneProjectionFull18'
 customWeightsName= 'weights'
-puDirEOS = '/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/PU-data/'
+puDirEOS = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/PU-data/'
 
 #### Compute weights for all data epoch specified below
 puDataEpoch = {
@@ -112,7 +112,7 @@ puDataEpoch = {
     '2018_runB' : puDirEOS + 'pileup_2018_RUNB.root',
     '2018_runC' : puDirEOS + 'pileup_2018_RUNC.root',
     '2018_runD' : puDirEOS + 'pileup_2018_RUND.root',
-    '2018_runABCD' : puDirEOS + 'pileup_2018_31p71fb.root',
+    '2018_runABCD' : puDirEOS + 'pileup_2018_circa40fb_ABCD.root',
     }
 
 nVtxDataEpoch = {

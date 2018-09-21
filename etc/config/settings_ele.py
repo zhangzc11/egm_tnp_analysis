@@ -29,9 +29,9 @@ tnpTreeDir = 'tnpEleIDs'
 
 samplesDef = {
     'data'   : tnpSamples.Data2018_102X['data_Run2018Av123'].clone(),
-    'mcNom'  : tnpSamples.Data2018_102X['DY_madgraph_part012'].clone(),
-    'mcAlt'  : tnpSamples.Data2018_102X['DY_madgraph_part012'].clone(),
-    'tagSel' : tnpSamples.Data2018_102X['DY_madgraph_part012'].clone(),
+    'mcNom'  : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
+    'mcAlt'  : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
+    'tagSel' : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
 }
 
 ## can add data sample easily
@@ -68,9 +68,9 @@ weightName = 'weights_2018_runABCD.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/mc/PU/DY_madgraph_part012_pho.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/mc/PU/DY_madgraph_part012_pho.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/mc/PU/DY_madgraph_part012_pho.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_ele.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_ele.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_ele.pu.puTree.root')
 
 
 

@@ -6,8 +6,8 @@ flags = {
     'passingLoose100XV2'   : '(passingLoose100XV2  == 1)',
     'passingMedium100XV2'  : '(passingMedium100XV2 == 1)',
     'passingTight100XV2'   : '(passingTight100XV2  == 1)',
-    'passingMVA94Xwp80' : '(passingMVA94Xwp80 == 1)',
-    'passingMVA94Xwp90' : '(passingMVA94Xwp90 == 1)',
+    'passingMVA94XV2wp80' : '(passingMVA94XV2wp80 == 1)',
+    'passingMVA94XV2wp90' : '(passingMVA94XV2wp90 == 1)',
     }
 
 baseOutDir = 'results/Data2018/tnpPhoID/runA/'
@@ -22,9 +22,9 @@ tnpTreeDir = 'tnpPhoIDs'
 
 samplesDef = {
     'data'   : tnpSamples.Data2018_102X['data_Run2018Av123'].clone(),
-    'mcNom'  : tnpSamples.Data2018_102X['DY_madgraph_part012'].clone(),
-    'mcAlt'  : tnpSamples.Data2018_102X['DY_madgraph_part012'].clone(),
-    'tagSel' : tnpSamples.Data2018_102X['DY_madgraph_part012'].clone(),
+    'mcNom'  : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
+    'mcAlt'  : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
+    'tagSel' : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
 }
 ## can add data sample easily
 samplesDef['data'].add_sample( tnpSamples.Data2018_102X['data_Run2018Bv12'] )
@@ -61,9 +61,9 @@ weightName = 'weights_2018_runABCD.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/mc/PU/DY_madgraph_part012_pho.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/mc/PU/DY_madgraph_part012_pho.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/micheli/TnP/ntuples_20180831/2018Data_1/mc/PU/DY_madgraph_part012_pho.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_pho.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_pho.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_pho.pu.puTree.root')
 
 
 #############################################################
