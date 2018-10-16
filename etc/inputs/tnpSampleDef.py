@@ -7,15 +7,17 @@ from libPython.tnpClassUtils import tnpSample
 #eosWinter17 = 'eos/cms/store/group/phys_egamma/tnp/80X/PhoEleIDs/Moriond17_v1/'
 eosMoriond18 = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01292018/Moriond18_V1/'
 eos2018Data_102X = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/'
-
+eos2017Data_94X = '/eos/cms/store/group/phys_egamma/swmukher/ntuple_2017_v2/' #this is needed b/c we want to study the SF of 2018 data w.r.t. 2017 94X MC
 Data2018_102X = {
     ### MiniAOD TnP for IDs scale 
-    'DY_madgraph_100X_part012' : tnpSample('DY_madgraph_100X_part012', 
-                                       eos2018Data_102X + 'mc/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8-AOD-100X_part012.root',
+       'DY_1j_madgraph'              : tnpSample('DY_1j_madgraph',
+                                       eos2017Data_94X + 'mc/DY1JetsToLLM50madgraphMLM.root',
                                        isMC = True, nEvts =  -1 ),
-
-    'DY_powheg_102X_part01' : tnpSample('DY_powheg_102X_part01', 
-                                       eos2018Data_102X + 'mc/DYToEE_M-50_NNPDF31_TuneCP5_13TeV-powheg-pythia8-AOD-102X_part01.root',
+#    'DY_amcatnlo'                 : tnpSample('DY_amcatnlo',
+#                                       eosMoriond18 + 'DYJetsToLLM50amcatnloFXFX.root',
+#                                       isMC = True, nEvts =  -1 ),
+    'DY_amcatnloext'                 : tnpSample('DY_amcatnloext',
+                                       eos2017Data_94X + 'mc/DYJetsToLLM50amcatnloFXFXext.root',
                                        isMC = True, nEvts =  -1 ),
 
 

@@ -22,9 +22,9 @@ tnpTreeDir = 'tnpPhoIDs'
 
 samplesDef = {
     'data'   : tnpSamples.Data2018_102X['data_Run2018Av123'].clone(),
-    'mcNom'  : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
-    'mcAlt'  : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
-    'tagSel' : tnpSamples.Data2018_102X['DY_powheg_102X_part01'].clone(),
+    'mcNom'  : tnpSamples.Data2018_102X['DY_1j_madgraph'].clone(),
+    'mcAlt'  : tnpSamples.Data2018_102X['DY_amcatnloext'].clone(),
+    'tagSel' : tnpSamples.Data2018_102X['DY_1j_madgraph'].clone(),
 }
 ## can add data sample easily
 samplesDef['data'].add_sample( tnpSamples.Data2018_102X['data_Run2018Bv12'] )
@@ -61,9 +61,9 @@ weightName = 'weights_2018_runABCD.totWeight'
 if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_weight(weightName)
 if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_weight(weightName)
 if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_weight(weightName)
-if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_pho.pu.puTree.root')
-if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_pho.pu.puTree.root')
-if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_20180920/2018Data_1/mc/PU/DY_powheg_102X_part01_pho.pu.puTree.root')
+if not samplesDef['mcNom' ] is None: samplesDef['mcNom' ].set_puTree('/eos/cms/store/group/phys_egamma/swmukher/ntuple_2017_v2/PU-wrt2018Data/DY_1j_madgraph_pho.pu.puTree.root')
+if not samplesDef['mcAlt' ] is None: samplesDef['mcAlt' ].set_puTree('/eos/cms/store/group/phys_egamma/swmukher/ntuple_2017_v2/PU-wrt2018Data/DY_amcatnloext_pho.pu.puTree.root')
+if not samplesDef['tagSel'] is None: samplesDef['tagSel'].set_puTree('/eos/cms/store/group/phys_egamma/swmukher/ntuple_2017_v2/PU-wrt2018Data/DY_1j_madgraph_pho.pu.puTree.root')
 
 
 #############################################################
