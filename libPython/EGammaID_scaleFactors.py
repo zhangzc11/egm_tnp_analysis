@@ -241,6 +241,10 @@ def EffiGraph1D(effDataList, effMCList, sfList ,nameout, xAxis = 'pT', yAxis = '
 
     c.Print(nameout)
 
+    listName = nameout.split('/')
+    for iext in ["pdf","C","png"]:
+        c.SaveAs(nameout.replace('egammaEffi.txt_egammaPlots',listName[-6].replace('tnp','')+'_SFvs'+xAxis+'_'+listName[-3]).replace('pdf',iext))
+
     return listOfTGraph2
 
     #################################################    
@@ -274,6 +278,9 @@ def diagnosticErrorPlot( effgr, ierror, nameout ):
     
     c2D_Err.Print(nameout)
 
+    listName = nameout.split('/')
+    for iext in ["pdf","C","png"]:
+        c2D_Err.SaveAs(nameout.replace('egammaEffi.txt_egammaPlots',listName[-6].replace('tnp','')+'_SF2D'+'_'+errorNames[ierror]+listName[-3]).replace('pdf',iext)) 
 
 
 def doEGM_SFs(filein, lumi, axis = ['pT','eta'] ):
@@ -374,6 +381,10 @@ def doEGM_SFs(filein, lumi, axis = ['pT','eta'] ):
     h2Error.DrawCopy("colz TEXT45")
 
     c2D.Print( pdfout )
+
+    listName = pdfout.split('/')
+    for iext in ["pdf","C","png"]:
+        c2D.SaveAs(pdfout.replace('egammaEffi.txt_egammaPlots',listName[-6].replace('tnp','')+'_SF2D'+'_'+listName[-3]).replace('pdf',iext))
 
 
     rootout = rt.TFile(nameOutBase + '_EGM2D.root','recreate')
