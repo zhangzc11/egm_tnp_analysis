@@ -16,6 +16,8 @@ The easiest thing to do is to set the environement in a 10_1_X release:
 
 >git clone -b  egm_tnp_Prompt2018_v2_15pOfStat git@github.com:lsoffi/egm_tnp_analysis.git
 
+> cd egm_tnp_analysis/
+
 > source etc/scripts/setup_ROOT6.10.sh
 
 
