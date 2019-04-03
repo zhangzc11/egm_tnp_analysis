@@ -168,18 +168,19 @@ puMC = {
 
 ### MC pu scenario to be used
 #puMCscenario = 'Spring2016MC_PUscenarioV1'
-puMCscenario = 'Moriond18MC_mix_2017'
+puMCscenario = 'Moriond17MC_mix_2016'
 customWeightsName= 'weights'
-puDirEOS = '/eos/cms/store/group/phys_egamma/soffi/TnP/ntuples_01162018/PU/'
+puDirEOS = '/eos/cms/store/group/phys_egamma/tnp/80X/pu/'
 
 #### Compute weights for all data epoch specified below
 puDataEpoch = {
-    '2017_runB' : puDirEOS + 'pileup_2017_RUNB.root',
-    '2017_runC' : puDirEOS + 'pileup_2017_RUNC.root',
-    '2017_runD'  : puDirEOS +'pileup_2017_RUND.root' ,
-    '2017_runE'  : puDirEOS +'pileup_2017_RUNE.root' ,
-    '2017_runF' : puDirEOS + 'pileup_2017_RUNF.root',    
-    '2017_runBCDEF' : puDirEOS + 'pileup_2017_41fb.root',
+    '2016_runB' : puDirEOS + 'pu_dist_runB_692.root',
+    '2016_runC' : puDirEOS + 'pu_dist_runC_692.root',
+    '2016_runD'  : puDirEOS +'pu_dist_runD_692.root' ,
+    '2016_runE'  : puDirEOS +'pu_dist_runE_692.root' ,
+    '2016_runF' : puDirEOS + 'pu_dist_runF_692.root',    
+    '2016_runG' : puDirEOS + 'pu_dist_runG_692.root',    
+    '2016_runAll' : puDirEOS + 'pu_dist_run2016_692.root',
     }
 
 nVtxDataEpoch = {
@@ -210,8 +211,11 @@ def reweight( sample, puType = 0,useCustomW=False  ):
     if sample.tnpTree is None:
         dirs = fmc.GetListOfKeys()
         for d in dirs:
+	    print d.GetName()
             if (d.GetName() == "sampleInfo"): continue
+            if (d.GetName() == "evtCounter"): continue
             tmc = fmc.Get("%s/fitter_tree" % d.GetName())
+	    print tmc.GetEntries()
     else:
         tmc = fmc.Get(sample.tnpTree)
     
@@ -276,8 +280,6 @@ def reweight( sample, puType = 0,useCustomW=False  ):
         evt = mcEvts[ievt]
         for pu in epochKeys:
 #            print pu
-            customWeights=customWeights_17Nov2017MCv2[pu]
-#            print customWeights_17Nov2017MCv2[pu]
 #            print "--------------------------"
             pum = -1
             pud = -1
@@ -299,6 +301,7 @@ def reweight( sample, puType = 0,useCustomW=False  ):
             if useCustomW:
                 puw=0
                 if  evt['truePU']> 0 and evt['truePU']<97:
+            	    customWeights=customWeights_17Nov2017MCv2[pu]
                     puw = customWeights[evt['truePU']]
                 
 #                    print evt['truePU'],puw
@@ -325,6 +328,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='tnp EGM pu reweighter')
     parser.add_argument('--mcTree'  , dest = 'path',  default = None, help = 'MC tree to compute weights for')
     parser.add_argument('puTree'    , default = None                , help = 'output puTree')
+    parser.add_argument('tnpTree'    , default = 'tnpPhoIDs/fitter_tree'                , help = 'output puTree')
 
     args = parser.parse_args()
     args.path = [args.path]
